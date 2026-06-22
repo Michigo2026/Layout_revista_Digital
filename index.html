@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revista Digital - Michael González</title>
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+    <!-- ====== LOGIN ====== -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-logo">📰</div>
+            <h1>Revista Digital</h1>
+            <p class="login-subtitle">Ingresa tus credenciales para acceder</p>
+            <div id="loginError" class="login-error hidden"></div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="nombre">👤 Nombre de usuario</label>
+                    <input type="text" id="nombre" placeholder="Ej: usuario_demo" value="usuario_demo" />
+                </div>
+                <div class="form-group">
+                    <label for="cedula">🆔 Cédula</label>
+                    <input type="text" id="cedula" placeholder="Ej: V12345678" value="V12345678" />
+                </div>
+                <button type="submit" class="btn-primary" id="loginBtn">🔓 Acceder</button>
+                <div id="loginStatus" class="login-status"></div>
+            </form>
+            <div class="login-help">
+                <p>💡 <strong>Credenciales de prueba:</strong></p>
+                <p>Usuario: <code>usuario_demo</code></p>
+                <p>Cédula: <code>V12345678</code></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== APP ====== -->
+    <div id="app" class="hidden">
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="logo">
+                        <h1>📰 REVISTA DIGITAL</h1>
+                    </div>
+                    <div class="header-user">
+                        <span class="user-badge" id="userBadge"></span>
+                        <button id="logoutBtn" class="btn-logout">✕ Cerrar</button>
+                    </div>
+                </div>
+                <nav class="nav-categories">
+                    <ul class="nav-list" id="categoryList">
+                        <li><a href="#" data-category="Tecnología" class="active">Tecnología</a></li>
+                        <li><a href="#" data-category="CINE/Series">CINE/Series</a></li>
+                        <li><a href="#" data-category="VIDEOJUEGOS">Videojuegos</a></li>
+                        <li><a href="#" data-category="CIENCIA">Ciencia</a></li>
+                        <li><a href="#" data-category="General">Categorías</a></li>
+                        <li><a href="#" data-category="MÁS...">MÁS...</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ===== CONTENIDO ===== -->
+        <main class="main-content">
+            <div class="container">
+                <div class="layout-wrapper">
+                    <!-- SIDEBAR -->
+                    <aside class="sidebar">
+                        <h3>Categorías</h3>
+                        <ul id="sidebarCategoryList">
+                            <li><a href="#" data-category="Tecnología" class="active">Tecnología</a></li>
+                            <li><a href="#" data-category="CINE/Series">CINE/Series</a></li>
+                            <li><a href="#" data-category="VIDEOJUEGOS">Videojuegos</a></li>
+                            <li><a href="#" data-category="CIENCIA">Ciencia</a></li>
+                            <li><a href="#" data-category="General">Categorías</a></li>
+                            <li><a href="#" data-category="MÁS...">MÁS...</a></li>
+                        </ul>
+                        <div class="sidebar-info">
+                            <p>📊 <span id="totalArticles">0</span> artículos</p>
+                            <p id="apiStatus" class="api-status"></p>
+                        </div>
+                    </aside>
+
+                    <!-- CENTRO -->
+                    <div class="center-content">
+                        <section class="featured-section">
+                            <div class="section-header">
+                                <h2>Noticia Destacada</h2>
+                                <span class="section-date" id="featuredDate">2026</span>
+                            </div>
+                            <div id="heroSection" class="hero-card"></div>
+                        </section>
+
+                        <section class="news-section">
+                            <div class="section-header">
+                                <h2>Lista de Noticias</h2>
+                                <span class="section-badge">2026</span>
+                            </div>
+                            <div id="newsGrid" class="news-list"></div>
+                        </section>
+                    </div>
+
+                    <!-- LO MÁS LEÍDO -->
+                    <aside class="most-read">
+                        <div class="section-header">
+                            <h2>Lo Más Leído</h2>
+                        </div>
+                        <div id="mostRead" class="most-read-list"></div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2026 - Todos los derechos reservados</p>
+                    <p><strong>Michael González</strong> - Ingeniería de Sistemas</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
